@@ -5,7 +5,7 @@ import ItemList from './components/ItemList';
 import ItemForm from './components/ItemForm';
 import Search from './components/Search';
 import ThemeToggle from './components/ThemeToggle';
-import logo from './assets/logo.png'; 
+import logo from './assets/logo.png'; // Import logo
 import { createGlobalStyle } from 'styled-components';
 
 
