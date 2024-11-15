@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  const API_URL = 'https://eagle-track-backend-4.onrender.com';  // Define API_URL here
+  const API_URL = 'https://eagle-track-backend-4.onrender.com';
 
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState('light');
