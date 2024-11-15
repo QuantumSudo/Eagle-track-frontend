@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+Eagle Track
+A simple inventory tracking application built using React JS.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+By Chris Ndegwa
 
-## Available Scripts
+Description
+Eagle Track is a modern inventory management app that allows users to manage their items, including adding, editing, deleting, and searching for items. The application utilizes core React concepts such as:
 
-In the project directory, you can run:
+React Hooks for state management (useState, useEffect).
+React Router for navigation between different pages.
+Styled Components for dynamic theming.
+Axios for API requests to a backend server.
+The app is fully functional, supporting both dark and light themes and providing an intuitive UI for managing inventory.
+Screenshot
+eagle-track-frontend/eagle-track/src/assets/app-screenshot.png
+Features
+Home Page displaying a list of inventory items.
+Add Item form for adding new items to the inventory.
+Edit Item functionality to update existing items.
+Delete Item to remove an item from the inventory.
+Search Bar to quickly filter items.
+Dark/Light Theme Toggle for changing the app's appearance.
+Responsive UI for desktop and mobile use.
+How to Use
+Requirements
+A computer, tablet, or phone.
+Access to the internet.
+Modern web browser (e.g., Chrome, Firefox, Edge).
+View Live Site
+You can try out the live version of Eagle Track here:
+[Eagle Track](https://eagle-track007.vercel.app/)
 
-### `npm start`
+Features of the live site:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Browse through the list of inventory items.
+Add, edit, or delete items.
+Search for items by name.
+Toggle between dark and light themes.
+Local Development
+To run the project locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Prerequisites
+Node.js installed on your machine.
+Code Editor (VS Code recommended).
+Terminal/Command Line for running commands.
+Installation
+Clone the Repository:
 
-### `npm test`
+bash
+Copy code
+git clone https://github.com/QuantumSudo/eagle-track-frontend/eagle-track.git
+Navigate to the Project Directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+cd eagle-track
+Install Dependencies:
 
-### `npm run build`
+bash
+Copy code
+npm install
+Start the Development Server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+npm start
+Visit the App in Your Browser:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open http://localhost:3000 to view the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Technologies Used
+React JS: Frontend framework for building the user interface.
+React Router: For navigation between pages.
+Axios: For making HTTP requests to the backend API.
+Styled Components: For dynamic theming and styling the components.
+Tailwind CSS: For utility-first styling.
+json-server: For simulating a backend API during development.
 
-### `npm run eject`
+Related Repositories
+Backend API
+Repository: [Eagle Track Backend](https://github.com/QuantumSudo/eagle-track-backend.git)
+Deployed API: [Live API URL](https://eagle-track-backend-4.onrender.com/items)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Support and Contact Details
+If you have any questions, suggestions, or need assistance, feel free to reach out:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Email: chriswndegwa@gmail.com
+License
+MIT License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Copyright
+Copyright © 2024 Chris Ndegwa
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+License Terms:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-## Learn More
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
