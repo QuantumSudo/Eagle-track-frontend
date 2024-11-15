@@ -1,72 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+
+// In ItemForm.js, directly use the API_URL
+const API_URL = 'https://eagle-track-backend-4.onrender.com';  // Define API_URL here as well
 
 const ItemForm = ({ addItem, updateItem }) => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  
-  const [name, setName] = useState('');
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [itemName, setItemName] = useState('');
+  const [itemDescription, setItemDescription] = useState('');
 
+  // Fetch item data if updating an existing item
   useEffect(() => {
-    if (id) {
-      axios.get(`http://localhost:5000/items/${id}`).then((response) => {
-        const { name, quantity, price } = response.data;
-        setName(name);
-        setQuantity(quantity);
-        setPrice(price);
-      }).catch((error) => {
-        console.error("Error fetching item data:", error);
-      });
+    if (updateItem) {
+      const itemId = 1;  // Replace with dynamic param for editing an item
+      fetch(`${API_URL}/items/${itemId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setItemName(data.name);
+          setItemDescription(data.description);
+        })
+        .catch((error) => console.error('Error fetching item:', error));
     }
-  }, [id]);
+  }, [updateItem]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newItem = { name: itemName, description: itemDescription };
 
-    const newItem = { name, quantity, price };
-
-    if (id) {
-      newItem.id = id;
+    if (updateItem) {
+      // Call updateItem function from App.js
       updateItem(newItem);
     } else {
+      // Add new item using addItem function from App.js
       addItem(newItem);
     }
-
-    navigate('/');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <input
-        type="text"
-        placeholder="Item Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-        className="w-full p-2 border border-gray-300 rounded"
-      />
-      <input
-        type="number"
-        placeholder="Quantity"
-        value={quantity}
-        onChange={(e) => setQuantity(e.target.value)}
-        required
-        className="w-full p-2 border border-gray-300 rounded"
-      />
-      <input
-        type="number"
-        placeholder="Price"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-        required
-        className="w-full p-2 border border-gray-300 rounded"
-      />
-      <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
-        Submit
-      </button>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Item Name:
+        <input
+          type="text"
+          value={itemName}
+          onChange={(e) => setItemName(e.target.value)}
+        />
+      </label>
+      <label>
+        Item Description:
+        <input
+          type="text"
+          value={itemDescription}
+          onChange={(e) => setItemDescription(e.target.value)}
+        />
+      </label>
+      <button type="submit">{updateItem ? 'Update Item' : 'Add Item'}</button>
     </form>
   );
 };

@@ -5,10 +5,9 @@ import ItemList from './components/ItemList';
 import ItemForm from './components/ItemForm';
 import Search from './components/Search';
 import ThemeToggle from './components/ThemeToggle';
-import logo from './assets/logo.png'; // Import your logo
+import logo from './assets/logo.png'; 
 import { createGlobalStyle } from 'styled-components';
 
-// Global Styles
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Arial', sans-serif;
@@ -19,32 +18,30 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  const API_URL = 'https://eagle-track-backend-4.onrender.com';  // Define API_URL here
+
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState('light');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Fetch data on mount
   useEffect(() => {
-    axios.get('http://localhost:5000/items').then((response) => setItems(response.data));
+    axios.get(`${API_URL}/items`).then((response) => setItems(response.data));
   }, []);
 
-  // Add item function
   const addItem = (newItem) => {
-    axios.post('http://localhost:5000/items', newItem).then((response) => {
+    axios.post(`${API_URL}/items`, newItem).then((response) => {
       setItems([...items, response.data]);
     });
   };
 
-  // Update item function
   const updateItem = (updatedItem) => {
-    axios.put(`http://localhost:5000/items/${updatedItem.id}`, updatedItem).then(() => {
+    axios.put(`${API_URL}/items/${updatedItem.id}`, updatedItem).then(() => {
       setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)));
     });
   };
 
-  // Delete item function
   const deleteItem = (id) => {
-    axios.delete(`http://localhost:5000/items/${id}`).then(() => {
+    axios.delete(`${API_URL}/items/${id}`).then(() => {
       setItems(items.filter((item) => item.id !== id));
     });
   };
@@ -57,11 +54,8 @@ const App = () => {
     <Router>
       <GlobalStyle theme={theme} />
       <div className="container mx-auto p-5">
-        {/* Header Section */}
         <header className="flex justify-between items-center mb-8">
-          {/* Logo */}
           <img src={logo} alt="Logo" className="h-36" />
-          {/* Dark Mode Toggle Button */}
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </header>
 
