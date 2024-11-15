@@ -15,7 +15,8 @@ Eagle Track is a modern inventory management app that allows users to manage the
 
 The app is fully functional, supporting both dark and light themes and providing an intuitive UI for managing inventory.
 
-![App Screenshot](eagle-track-frontend/eagle-track/src/assets/app-screenshot.png)
+Screenshot
+![Eagle Track](image.png)
 
 ## Features
 
@@ -37,7 +38,7 @@ The app is fully functional, supporting both dark and light themes and providing
 
 ### View Live Site
 
-You can try out the live version of Eagle Track here: [Eagle Track Live](#)
+You can try out the live version of Eagle Track here: [Eagle Track](https://eagle-track007.vercel.app/)
 
 #### Features of the live site:
 - Browse through the list of inventory items.
@@ -45,61 +46,61 @@ You can try out the live version of Eagle Track here: [Eagle Track Live](#)
 - Search for items by name.
 - Toggle between dark and light themes.
 
-## Local Development
+## **Local Development**
 
 To run the project locally, follow these steps:
 
-### Prerequisites
+### **Prerequisites**
 
 - **Node.js** installed on your machine.
 - A **code editor** (VS Code recommended).
 - A **terminal/command line** for running commands.
 
-### Installation
+### **Installation**
 
 1. **Clone the Repository**:
 
-```bash
-   git clone https://github.com/QuantumSudo/eagle-track-frontend.git
-Navigate to the Project Directory:
+bash
+git clone https://github.com/QuantumSudo/eagle-track-frontend.git
+2.**Navigate to the Project Directory:**
 
-```bash
+bash
 cd eagle-track
-Install Dependencies:
+3.**Install Dependencies:**
 
-```bash
-
+bash
 npm install
-Start the Development Server:
+4.**Start the Development Server:**
 
-```bash```
+bash
 npm start
-Visit the App in Your Browser:
+5.**Visit the App in Your Browser:**
 
 Open http://localhost:3000 to view the application.
 
-Technologies Used
+**Technologies Used**
 React JS: Frontend framework for building the user interface.
 React Router: For navigation between pages.
 Axios: For making HTTP requests to the backend API.
 Styled Components: For dynamic theming and styling the components.
 Tailwind CSS: For utility-first styling.
 json-server: For simulating a backend API during development.
-Related Repositories
-Backend API Repository: Eagle Track Backend
-Deployed API: Live API URL
+**Related Repositories**
+Backend API Repository: [Eagle Track Backend](https://github.com/QuantumSudo/eagle-track-backend.git)
+Deployed API: [Live API URL](https://eagle-track-backend-4.onrender.com/items)
 Support and Contact
 If you have any questions, suggestions, or need assistance, feel free to reach out:
 
 Email: chriswndegwa@gmail.com
-License
+**License**
 MIT License
 
-Copyright
+**Copyright**
 Copyright © 2024 Chris Ndegwa
 
-License Terms
+**License Terms**
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+markdown
