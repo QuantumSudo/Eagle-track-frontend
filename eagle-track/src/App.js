@@ -1,36 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import ItemList from "./components/ItemList";
-import ItemForm from "./components/ItemForm";
-import Search from "./components/Search";
-import ThemeToggle from "./components/ThemeToggle";
-import { GlobalStyle } from "./GlobalStyle";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import ItemList from './components/ItemList';
+import ItemForm from './components/ItemForm';
+import Search from './components/Search';
+import ThemeToggle from './components/ThemeToggle';
+import logo from './assets/logo.png'; // Import your logo
+import { createGlobalStyle } from 'styled-components';
+
+// Global Styles
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: ${(props) => (props.theme === 'dark' ? '#333' : '#fff')};
+    color: ${(props) => (props.theme === 'dark' ? '#fff' : '#333')};
+    transition: all 0.3s;
+  }
+`;
 
 const App = () => {
   const [items, setItems] = useState([]);
-  const [theme, setTheme] = useState("light");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [theme, setTheme] = useState('light');
+  const [searchQuery, setSearchQuery] = useState('');
 
+  // Fetch data on mount
   useEffect(() => {
-    axios.get("http://localhost:5000/items").then((response) => {
-      setItems(response.data);
-    });
+    axios.get('http://localhost:5000/items').then((response) => setItems(response.data));
   }, []);
 
   const addItem = (newItem) => {
-    axios.post("http://localhost:5000/items", newItem).then((response) => {
+    axios.post('http://localhost:5000/items', newItem).then((response) => {
       setItems([...items, response.data]);
     });
   };
 
   const updateItem = (updatedItem) => {
     axios.put(`http://localhost:5000/items/${updatedItem.id}`, updatedItem).then(() => {
-      setItems(
-        items.map((item) =>
-          item.id === updatedItem.id ? updatedItem : item
-        )
-      );
+      setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)));
     });
   };
 
@@ -47,22 +53,21 @@ const App = () => {
   return (
     <Router>
       <GlobalStyle theme={theme} />
-      <div className="container">
-        <header>
-          <img src="logo.png" alt="Logo" />
+      <div className="container mx-auto p-5">
+        {/* Header Section */}
+        <header className="flex justify-between items-center mb-8">
+          {/* Logo */}
+          <img src={logo} alt="Logo" className="h-36" /> {/* Increased the size here */}
+          {/* Dark Mode Toggle Button */}
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </header>
+
         <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
         <Routes>
           <Route
             path="/"
-            element={
-              <ItemList
-                items={filteredItems}
-                deleteItem={deleteItem}
-                updateItem={updateItem}
-              />
-            }
+            element={<ItemList items={filteredItems} deleteItem={deleteItem} updateItem={updateItem} />}
           />
           <Route path="/add" element={<ItemForm addItem={addItem} />} />
           <Route path="/edit/:id" element={<ItemForm addItem={updateItem} />} />

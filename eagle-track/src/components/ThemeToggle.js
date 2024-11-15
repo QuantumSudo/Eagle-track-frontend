@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa'; // Make sure this import works
 
 const ThemeToggle = ({ theme, setTheme }) => {
   const toggleTheme = () => {
@@ -7,8 +7,15 @@ const ThemeToggle = ({ theme, setTheme }) => {
   };
 
   return (
-    <button onClick={toggleTheme}>
-      {theme === 'light' ? <FaMoon /> : <FaSun />}
+    <button
+      onClick={toggleTheme}
+      className="flex items-center space-x-2 bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300"
+    >
+      {theme === 'light' ? (
+        <FaMoon className="text-xl text-gray-800" />
+      ) : (
+        <FaSun className="text-xl text-yellow-400" />
+      )}
     </button>
   );
 };
