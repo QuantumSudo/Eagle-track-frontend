@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa'; // Make sure this import works
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeToggle = ({ theme, setTheme }) => {
   const toggleTheme = () => {

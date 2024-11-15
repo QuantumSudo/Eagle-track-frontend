@@ -3,17 +3,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ItemForm = ({ addItem, updateItem }) => {
-  const { id } = useParams(); // Get the id from the URL
+  const { id } = useParams();
   const navigate = useNavigate();
   
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
 
-  // Fetch item data when editing
   useEffect(() => {
     if (id) {
-      // Fetch item data for editing
       axios.get(`http://localhost:5000/items/${id}`).then((response) => {
         const { name, quantity, price } = response.data;
         setName(name);
@@ -31,14 +29,13 @@ const ItemForm = ({ addItem, updateItem }) => {
     const newItem = { name, quantity, price };
 
     if (id) {
-      // Add the id to the item object when updating
       newItem.id = id;
-      updateItem(newItem); // Update the item if it exists
+      updateItem(newItem);
     } else {
-      addItem(newItem); // Otherwise, create a new item
+      addItem(newItem);
     }
 
-    navigate('/'); // Redirect to the list page
+    navigate('/');
   };
 
   return (
