@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Arial', sans-serif;
     background-color: ${(props) => (props.theme === 'dark' ? '#333' : '#fff')};
     color: ${(props) => (props.theme === 'dark' ? '#fff' : '#333')};
-    transition: all 0.3s;
+    transition: all 0.3s ease;
   }
 `;
 
@@ -28,18 +28,21 @@ const App = () => {
     axios.get('http://localhost:5000/items').then((response) => setItems(response.data));
   }, []);
 
+  // Add item function
   const addItem = (newItem) => {
     axios.post('http://localhost:5000/items', newItem).then((response) => {
       setItems([...items, response.data]);
     });
   };
 
+  // Update item function
   const updateItem = (updatedItem) => {
     axios.put(`http://localhost:5000/items/${updatedItem.id}`, updatedItem).then(() => {
       setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)));
     });
   };
 
+  // Delete item function
   const deleteItem = (id) => {
     axios.delete(`http://localhost:5000/items/${id}`).then(() => {
       setItems(items.filter((item) => item.id !== id));
@@ -57,7 +60,7 @@ const App = () => {
         {/* Header Section */}
         <header className="flex justify-between items-center mb-8">
           {/* Logo */}
-          <img src={logo} alt="Logo" className="h-36" /> {/* Increased the size here */}
+          <img src={logo} alt="Logo" className="h-36" />
           {/* Dark Mode Toggle Button */}
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </header>
@@ -70,7 +73,7 @@ const App = () => {
             element={<ItemList items={filteredItems} deleteItem={deleteItem} updateItem={updateItem} />}
           />
           <Route path="/add" element={<ItemForm addItem={addItem} />} />
-          <Route path="/edit/:id" element={<ItemForm addItem={updateItem} />} />
+          <Route path="/edit/:id" element={<ItemForm updateItem={updateItem} />} />
         </Routes>
       </div>
     </Router>

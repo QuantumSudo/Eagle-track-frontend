@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const ItemForm = ({ addItem, updateItem }) => {
   const { id } = useParams(); // Get the id from the URL
   const navigate = useNavigate();
   
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
 
   // Fetch item data when editing
   useEffect(() => {
     if (id) {
-      // Make sure we're getting the item correctly
-      axios
-        .get(`http://localhost:5000/items/${id}`)
-        .then((response) => {
-          const { name, quantity, price } = response.data;
-          setName(name);
-          setQuantity(quantity);
-          setPrice(price);
-        })
-        .catch((error) => {
-          console.error("Error fetching item data:", error);
-        });
+      // Fetch item data for editing
+      axios.get(`http://localhost:5000/items/${id}`).then((response) => {
+        const { name, quantity, price } = response.data;
+        setName(name);
+        setQuantity(quantity);
+        setPrice(price);
+      }).catch((error) => {
+        console.error("Error fetching item data:", error);
+      });
     }
   }, [id]);
 
@@ -41,7 +38,7 @@ const ItemForm = ({ addItem, updateItem }) => {
       addItem(newItem); // Otherwise, create a new item
     }
 
-    navigate("/"); // Redirect to the list page
+    navigate('/'); // Redirect to the list page
   };
 
   return (
