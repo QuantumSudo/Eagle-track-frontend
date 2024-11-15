@@ -46,23 +46,18 @@ Terminal/Command Line for running commands.
 Installation
 Clone the Repository:
 
-bash
-Copy code
 git clone https://github.com/QuantumSudo/eagle-track-frontend/eagle-track.git
 Navigate to the Project Directory:
 
-bash
-Copy code
+
 cd eagle-track
 Install Dependencies:
 
-bash
-Copy code
+
 npm install
 Start the Development Server:
 
-bash
-Copy code
+
 npm start
 Visit the App in Your Browser:
 
