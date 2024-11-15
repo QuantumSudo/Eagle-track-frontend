@@ -77,21 +77,25 @@ To run the project locally, follow these steps:
 1. **Clone the Repository**:
 
 bash
+
 git clone https://github.com/QuantumSudo/eagle-track-frontend.git
 
 2.**Navigate to the Project Directory:**
 
 bash
+
 cd eagle-track
 
 3.**Install Dependencies:**
 
 bash
+
 npm install
 
 4.**Start the Development Server:**
 
 bash
+
 npm start
 
 5.**Visit the App in Your Browser:**
@@ -100,28 +104,41 @@ Open http://localhost:3000 to view the application.
 
 **Technologies Used**
 React JS: Frontend framework for building the user interface.
+
 React Router: For navigation between pages.
+
 Axios: For making HTTP requests to the backend API.
+
 Styled Components: For dynamic theming and styling the components.
+
 Tailwind CSS: For utility-first styling.
+
 json-server: For simulating a backend API during development.
 
 **Related Repositories**
+
 Backend API Repository: [Eagle Track Backend](https://github.com/QuantumSudo/eagle-track-backend.git)
+
 Deployed API: [Live API URL](https://eagle-track-backend-4.onrender.com/items)
-Support and Contact
+
+**Support and Contact**
+
 If you have any questions, suggestions, or need assistance, feel free to reach out:
 
 Email: chriswndegwa@gmail.com
+
 **License**
+
 MIT License
 
 **Copyright**
+
 Copyright © 2024 Chris Ndegwa
 
 **License Terms**
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-markdown
+
